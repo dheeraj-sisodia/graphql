@@ -35,6 +35,23 @@ mutation {
   deleteUser(id: "813fe2d3-1c28-4dc9-b835-3db50df72486")
 }
 
+//To get all records
+
+query {
+  getAllUsers {
+    userId
+    name
+    address
+    phone
+    age
+    gender
+        city {
+      cityId
+      cityName
+    }
+  }
+}
+
 //To query by Id
 
  query {
