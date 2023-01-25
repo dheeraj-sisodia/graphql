@@ -10,6 +10,7 @@ mutation {
       phone: "1234567890"
       age:34
       gender:"M"
+	    dateOfBirth: "1996-11-10"
       cityId:1
       
   })
@@ -18,13 +19,14 @@ mutation {
 //To update existing recored.
 
 mutation {
-  updateUser(id: "813fe2d3-1c28-4dc9-b835-3db50df72486", userInput: {
-    userId:"6add3421-0179-4b5e-87fb-ec4c3f25b481"
+  updateUser(id: "1b1d7000-3bd9-4e1d-b6ff-a0799643acb9", userInput: {
+    userId:"1b1d7000-3bd9-4e1d-b6ff-a0799643acb9"
       name: "name"
       address: "Bangalore"
       phone: "1234567890"
       age:34
       gender:"M"
+	    dateOfBirth: "1996-11-10"
       cityId:1
   })
 }
@@ -32,19 +34,20 @@ mutation {
 //To Delete existing record
 
 mutation {
-  deleteUser(id: "813fe2d3-1c28-4dc9-b835-3db50df72486")
+  deleteUser(id: "1b1d7000-3bd9-4e1d-b6ff-a0799643acb9")
 }
 
-//To get all records
+//To query by Id
 
 query {
-  getAllUsers {
+  userById(id: "1b1d7000-3bd9-4e1d-b6ff-a0799643acb9") {
     userId
     name
     address
     phone
     age
     gender
+	dateOfBirth
         city {
       cityId
       cityName
@@ -52,16 +55,17 @@ query {
   }
 }
 
-//To query by Id
+//To get all records
 
  query {
-  userById(id: "813fe2d3-1c28-4dc9-b835-3db50df72486") {
+  getAllUsers {
     userId
     name
     address
     phone
     age
     gender
+	dateOfBirth
         city {
       cityId
       cityName
