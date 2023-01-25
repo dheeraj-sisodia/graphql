@@ -1,0 +1,21 @@
+type User {
+    userId:String
+    name:String
+    address:String
+    phone:String
+    age:Int
+    gender:String
+    dateOfBirth: Date
+    city:City
+}
+
+input UserInput {
+    userId:String
+    name:String
+    address:String
+    phone:String
+    age:Int
+    gender:String
+    dateOfBirth: Date
+    cityId:Int
+}

@@ -1,0 +1,4 @@
+type City {
+    cityId: Int
+    cityName: String
+}
