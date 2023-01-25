@@ -9,8 +9,10 @@ type User {
     phone:String
     age:Int
     gender:String
+    dateOfBirth: Date
     city:City
 }
+
 
 type City {
     cityId: Int
@@ -39,5 +41,8 @@ input UserInput {
     phone:String
     age:Int
     gender:String
+    dateOfBirth: Date
     cityId:Int
 }
+
+scalar Date

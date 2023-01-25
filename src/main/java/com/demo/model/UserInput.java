@@ -1,5 +1,7 @@
 package com.demo.model;
 
+import java.time.LocalDate;
+
 public class UserInput {
     private String userId;
     private String name;
@@ -7,6 +9,8 @@ public class UserInput {
     private String phone;
     private Integer age;
     private String gender;
+
+    private LocalDate dateOfBirth;
     private Integer cityId;
 
     public String getUserId() {
@@ -65,5 +69,11 @@ public class UserInput {
         this.cityId = cityId;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }

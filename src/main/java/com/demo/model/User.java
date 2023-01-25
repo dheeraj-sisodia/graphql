@@ -1,5 +1,6 @@
 package com.demo.model;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class User {
@@ -10,6 +11,8 @@ public class User {
     private String phone;
     private Integer age;
     private String gender;
+
+    private LocalDate dateOfBirth;
     private Integer cityId;
 
     private static Map<String, User> userDetails;
@@ -18,13 +21,14 @@ public class User {
         userDetails = new HashMap<>();
     }
 
-    public User(String userid, String name, String address, String phone, Integer age, String gender, Integer cityid) {
+    public User(String userid, String name, String address, String phone, Integer age, String gender, LocalDate dateOfBirth, Integer cityid) {
         this.userId = userid;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.age = age;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
         this.cityId = cityid;
     }
 
@@ -32,18 +36,20 @@ public class User {
         User app = userDetails.get(id);
         return app;
     }
+
     public static List<User> getAllUsers() {
-        return new ArrayList<>(userDetails.values()) ;
+        return new ArrayList<>(userDetails.values());
     }
+
     public static String addFactApplication(UserInput userInput) {
         String id = UUID.randomUUID().toString();
-        userDetails.put(id, new User(id, userInput.getName(), userInput.getAddress(), userInput.getPhone(), userInput.getAge(), userInput.getGender(), userInput.getCityId()));
+        userDetails.put(id, new User(id, userInput.getName(), userInput.getAddress(), userInput.getPhone(), userInput.getAge(), userInput.getGender(), userInput.getDateOfBirth(), userInput.getCityId()));
         return id;
     }
 
     public static String updateFactApplication(String id, UserInput userInput) {
         if (userDetails.containsKey(id)) {
-            userDetails.put(id, new User(id, userInput.getName(), userInput.getAddress(), userInput.getPhone(), userInput.getAge(), userInput.getGender(), userInput.getCityId()));
+            userDetails.put(id, new User(id, userInput.getName(), userInput.getAddress(), userInput.getPhone(), userInput.getAge(), userInput.getGender(), userInput.getDateOfBirth(), userInput.getCityId()));
             return "Success";
         }
         return "Not Found";
@@ -82,16 +88,7 @@ public class User {
         return cityId;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", cityId=" + cityId +
-                '}';
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 }
