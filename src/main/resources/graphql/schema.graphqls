@@ -1,0 +1,42 @@
+type Query {
+    userById(id: ID): User
+}
+type User {
+    userId:String
+    name:String
+    address:String
+    phone:String
+    age:Int
+    gender:String
+    city:City
+}
+
+type City {
+    cityId: Int
+    cityName: String
+}
+
+type Mutation {
+    addUser(userInput: UserInput!): String!
+    updateUser(id: ID!, userInput: UserInput!): String!
+    deleteUser(id: ID!): String!
+}
+input RatingInput {
+    rating: Int
+    comment: String
+    user: String
+}
+
+type Output {
+    name: String
+}
+
+input UserInput {
+    userId:String
+    name:String
+    address:String
+    phone:String
+    age:Int
+    gender:String
+    cityId:Int
+}
