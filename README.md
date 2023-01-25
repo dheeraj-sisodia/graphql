@@ -36,6 +36,7 @@ mutation {
 }
 
 //To query by Id
+
  query {
   userById(id: "813fe2d3-1c28-4dc9-b835-3db50df72486") {
     userId
