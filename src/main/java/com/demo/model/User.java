@@ -32,7 +32,9 @@ public class User {
         User app = userDetails.get(id);
         return app;
     }
-
+    public static List<User> getAllUsers() {
+        return new ArrayList<>(userDetails.values()) ;
+    }
     public static String addFactApplication(UserInput userInput) {
         String id = UUID.randomUUID().toString();
         userDetails.put(id, new User(id, userInput.getName(), userInput.getAddress(), userInput.getPhone(), userInput.getAge(), userInput.getGender(), userInput.getCityId()));

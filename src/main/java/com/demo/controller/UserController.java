@@ -9,11 +9,18 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+
 @Controller
 public class UserController {
     @QueryMapping
     public User userById(@Argument String id) {
         return User.getById(id);
+    }
+
+    @QueryMapping
+    public List<User> getAllUsers() {
+        return User.getAllUsers();
     }
 
     @SchemaMapping
