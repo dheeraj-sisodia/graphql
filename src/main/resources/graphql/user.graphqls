@@ -2,7 +2,7 @@ type User {
     userId:String
     name:String
     address:String
-    phone:String
+    phone:Long
     age:Int
     gender:String
     dateOfBirth: Date
@@ -13,7 +13,7 @@ input UserInput {
     userId:String
     name:String
     address:String
-    phone:String
+    phone:Long
     age:Int
     gender:String
     dateOfBirth: Date

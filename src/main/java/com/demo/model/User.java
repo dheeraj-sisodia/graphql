@@ -8,7 +8,7 @@ public class User {
     private String userId;
     private String name;
     private String address;
-    private String phone;
+    private Long phone;
     private Integer age;
     private String gender;
 
@@ -21,7 +21,7 @@ public class User {
         userDetails = new HashMap<>();
     }
 
-    public User(String userid, String name, String address, String phone, Integer age, String gender, LocalDate dateOfBirth, Integer cityid) {
+    public User(String userid, String name, String address, Long phone, Integer age, String gender, LocalDate dateOfBirth, Integer cityid) {
         this.userId = userid;
         this.name = name;
         this.address = address;
@@ -72,7 +72,7 @@ public class User {
         return address;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
 

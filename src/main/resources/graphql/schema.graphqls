@@ -8,3 +8,4 @@ type Mutation {
     deleteUser(id: ID!): String!
 }
 scalar Date
+scalar Long

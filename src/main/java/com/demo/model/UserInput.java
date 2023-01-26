@@ -6,7 +6,7 @@ public class UserInput {
     private String userId;
     private String name;
     private String address;
-    private String phone;
+    private Long phone;
     private Integer age;
     private String gender;
 
@@ -37,11 +37,11 @@ public class UserInput {
         this.address = address;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
